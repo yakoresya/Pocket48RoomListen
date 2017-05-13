@@ -90,6 +90,7 @@ namespace Teemo.CoolQ.Plugins
                 HttpWebRequest req = (HttpWebRequest)WebRequest.Create(new Uri("https://plive.48.cn/livesystem/api/live/v1/memberLivePage"));
                 req.Method = "POST";
                 req.UserAgent = "okhttp/3.4.1";
+                req.KeepAlive = false;
 
                 JObject rss = new JObject(
                     new JProperty("type", 0),
@@ -150,6 +151,7 @@ namespace Teemo.CoolQ.Plugins
                 HttpWebRequest req = (HttpWebRequest)WebRequest.Create(new Uri("https://pjuju.48.cn/imsystem/api/im/v1/member/room/message/chat"));
                 req.Method = "POST";
                 req.UserAgent = "okhttp/3.4.1";
+                req.KeepAlive = false;
 
                 JObject rss = new JObject(
                     new JProperty("roomId", listenConfig.KDRoomId),
